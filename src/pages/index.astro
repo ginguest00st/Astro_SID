@@ -1,16 +1,67 @@
 ---
+// astro_sid/src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Tes Tailwind Desa">
-  <main class="p-4 max-w-md mx-auto">
-    <!-- Komponen Tes Tailwind -->
-    <div class="bg-emerald-600 text-white p-4 rounded-xl shadow-md text-center space-y-2">
-      <h1 class="text-lg font-bold">Desa Sukamaju</h1>
-      <p class="text-xs text-emerald-100">Tailwind CSS Berhasil Berjalan! 🎉</p>
-      <button class="bg-white text-emerald-700 px-3 py-1.5 rounded-lg text-xs font-semibold shadow hover:bg-emerald-50 active:scale-95 transition-all">
-        Uji Tombol Mobile
-      </button>
+<Layout title="Beranda - Desa Sukamaju">
+  <div class="space-y-4">
+    
+    <!-- Stat Card Ringkas -->
+    <div class="grid grid-cols-3 gap-2 bg-emerald-50 p-3 rounded-xl border border-emerald-100 text-center">
+      <div>
+        <span class="block text-[10px] text-gray-500">Penduduk</span>
+        <strong class="text-xs text-emerald-800">3.420 Jiwa</strong>
+      </div>
+      <div class="border-x border-emerald-200">
+        <span class="block text-[10px] text-gray-500">RT / RW</span>
+        <strong class="text-xs text-emerald-800">12 / 04</strong>
+      </div>
+      <div>
+        <span class="block text-[10px] text-gray-500">Luas Desa</span>
+        <strong class="text-xs text-emerald-800">12 Km²</strong>
+      </div>
     </div>
-  </main>
+
+    <!-- Quick Navigation Grid -->
+    <div class="grid grid-cols-4 gap-2 text-center text-xs">
+      <a href="/profil" class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 hover:bg-emerald-50 transition">
+        <span class="text-lg block mb-0.5">🏛️</span>
+        <span class="text-[10px] font-medium">Profil</span>
+      </a>
+      <a href="/aparatur" class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 hover:bg-emerald-50 transition">
+        <span class="text-lg block mb-0.5">👥</span>
+        <span class="text-[10px] font-medium">Aparatur</span>
+      </a>
+      <a href="/berita" class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 hover:bg-emerald-50 transition">
+        <span class="text-lg block mb-0.5">📰</span>
+        <span class="text-[10px] font-medium">Berita</span>
+      </a>
+      <a href="/layanan" class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 hover:bg-emerald-50 transition">
+        <span class="text-lg block mb-0.5">📞</span>
+        <span class="text-[10px] font-medium">Darurat</span>
+      </a>
+    </div>
+
+    <!-- Section Berita Terbaru Placeholder -->
+    <div>
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-xs font-bold text-gray-700">Kabar Desa Terbaru</h2>
+        <a href="/berita" class="text-[10px] text-emerald-700 font-semibold">Lihat Semua</a>
+      </div>
+      
+      <div class="space-y-2">
+        <div class="p-3 bg-white rounded-lg border border-gray-100 shadow-sm flex space-x-3 items-center">
+          <div class="w-12 h-12 bg-emerald-100 rounded-md flex-shrink-0 flex items-center justify-center text-emerald-700 font-bold text-xs">
+            INFO
+          </div>
+          <div class="overflow-hidden">
+            <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-medium">Pengumuman</span>
+            <h3 class="text-xs font-semibold text-gray-800 truncate mt-0.5">Musyawarah Pembangunan Desa 2026</h3>
+            <p class="text-[10px] text-gray-400">28 Juli 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </Layout>

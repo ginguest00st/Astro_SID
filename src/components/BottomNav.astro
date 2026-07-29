@@ -1,0 +1,25 @@
+---
+// astro_sid/src/components/BottomNav.astro
+const pathname = Astro.url.pathname;
+---
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 flex justify-around text-center max-w-md mx-auto z-50 shadow-lg">
+  <a href="/" class={`flex flex-col items-center text-[11px] ${pathname === '/' ? 'text-emerald-700 font-bold' : 'text-gray-500'}`}>
+    <span class="text-base">🏠</span>
+    <span>Beranda</span>
+  </a>
+
+  <a href="/profil" class={`flex flex-col items-center text-[11px] ${pathname === '/profil' ? 'text-emerald-700 font-bold' : 'text-gray-500'}`}>
+    <span class="text-base">🏛️</span>
+    <span>Profil</span>
+  </a>
+
+  <a href="/berita" class={`flex flex-col items-center text-[11px] ${pathname.startsWith('/berita') ? 'text-emerald-700 font-bold' : 'text-gray-500'}`}>
+    <span class="text-base">📰</span>
+    <span>Berita</span>
+  </a>
+
+  <a href="/layanan" class={`flex flex-col items-center text-[11px] ${pathname === '/layanan' ? 'text-emerald-700 font-bold' : 'text-gray-500'}`}>
+    <span class="text-base">📑</span>
+    <span>Layanan</span>
+  </a>
+</nav>
