@@ -1,46 +1,37 @@
-# Astro Starter Kit: Basics
+# 🏛️ Sistem Informasi Profil & Pelayanan Desa (Low-Bandwidth Mobile First)
 
-```sh
-npm create astro@latest -- --template basics
-```
+Aplikasi **Sistem Informasi Desa** berbasis *Monorepo* yang dirancang khusus untuk performa tinggi, **sangat ringan, cepat diakses pada jaringan/sinyal lemah (2G/3G)**, serta responsif dengan tampilan khas *mobile*.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Sistem ini dirancang dengan arsitektur *scalable* (mudah di-upgrade) untuk mendukung ekspansi fitur pendataan warga dan administrasi pelayanan surat online di masa mendatang.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tech Stack & Arsitektur
+
+* **Frontend (`/astro_sid`):** [Astro](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)
+  * *Zero-JS by default*, *Lightweight*, *PWA Ready (Offline Mode)*.
+* **Backend (`/backend_sid`):** Node.js + Express.js REST API
+  * *Gzip/Brotli Compression*, *Sharp Image Optimization (WebP)*, *Rate Limiter*.
+* **Database:** PostgreSQL / SQLite
+* **Arsitektur:** Decoupled Monorepo (Frontend & Backend terpisah dalam 1 Repositori Git).
+
+---
+
+## 📁 Struktur Folder Projek
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+projek_mandiri/
+├── astro_sid/          # Aplikasi Frontend (Astro + Tailwind)
+│   ├── src/
+│   │   ├── components/ # Komponen UI Mobile Ringkas
+│   │   ├── layouts/    # Kerangka Dasar Halaman (Layout)
+│   │   ├── pages/      # Routing Halaman (Beranda, Profil, Berita, dll)
+│   │   └── services/   # Fetcher API Backend
+│   └── public/         # Asset Statis (Logo, Icon, Manifest PWA)
+│
+└── backend_sid/        # Server API (Node.js + Express)
+    └── src/
+        ├── config/     # Koneksi Database
+        ├── controllers/# Logika Bisnis & Pengolahan Data
+        ├── routes/     # API Endpoints (/api/v1/...)
+        └── utils/      # Kompresi Gambar & Helper

@@ -1,11 +1,16 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Tes Tailwind Desa">
+  <main class="p-4 max-w-md mx-auto">
+    <!-- Komponen Tes Tailwind -->
+    <div class="bg-emerald-600 text-white p-4 rounded-xl shadow-md text-center space-y-2">
+      <h1 class="text-lg font-bold">Desa Sukamaju</h1>
+      <p class="text-xs text-emerald-100">Tailwind CSS Berhasil Berjalan! 🎉</p>
+      <button class="bg-white text-emerald-700 px-3 py-1.5 rounded-lg text-xs font-semibold shadow hover:bg-emerald-50 active:scale-95 transition-all">
+        Uji Tombol Mobile
+      </button>
+    </div>
+  </main>
 </Layout>
